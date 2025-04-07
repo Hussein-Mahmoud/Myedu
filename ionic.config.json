@@ -1,0 +1,7 @@
+{
+  "name": "Myedu",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
