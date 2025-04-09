@@ -1,0 +1,30 @@
+.summary_inner {
+  .mystery_box:first-of-type {
+    background: var(--white-color);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .mystery_box:last-of-type {
+    border-top: 1px solid #D1C5FB;
+    border-radius: 0px;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+  .mystery_box {
+    padding: 5px 0;
+    border-radius: 12px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    // margin-bottom: 20px;
+    h2 {
+      margin: 0;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+    p {
+      margin: 0;
+      color: #838383;
+    }
+  }
+}

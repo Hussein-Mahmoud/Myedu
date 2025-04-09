@@ -45,14 +45,15 @@ ion-button {
   --background: var(--white-color);
   --color: var(--main-shade-color);
   --box-shadow: var(--box-main-shadow);
-  --border-width: 1px;
-  --border-style: solid;
+  --border-width: 0px;
   --border-color: var(--main-color);
+  border: 1px solid var(--main-color);
   --padding-bottom: 15px;
   --padding-top: 15px;
   --padding-start: 25px;
   --padding-end: 25px;
   --border-radius: 12px;
+  border-radius: 12px;
   font-size: 22px;
   font-weight: 900;
   text-transform: capitalize;
@@ -131,7 +132,6 @@ ion-item {
   --background: var(--white-color);
 }
 
-
 // ====================margin==================//
 // margin top class from 0 to 100
 @for $i from 0 through 100 {
@@ -139,7 +139,6 @@ ion-item {
     margin-top: #{$i}px;
   }
 }
-
 
 // margin bottom class from 0 to 100
 @for $i from 0 through 100 {

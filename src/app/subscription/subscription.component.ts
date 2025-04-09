@@ -28,6 +28,7 @@ import {
 } from '@ionic/angular/standalone';
 import { FooterComponent } from '../shared/components/footer/footer.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { SummaryComponent } from './summary/summary.component';
 
 interface Grade {
   id: number;
@@ -69,6 +70,7 @@ interface Topic {
     IonContent,
     IonButtons,
     FooterComponent,
+    SummaryComponent,
     ReactiveFormsModule,
     IonDatetime,
     IonModal,
