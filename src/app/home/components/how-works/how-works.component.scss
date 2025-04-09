@@ -1,0 +1,43 @@
+.works_sec {
+  background: #fff9e6;
+  background-image: url(../../../../assets/howWorks.png);
+  background-size: 100% 100%;
+  background-position: center;
+  h2{
+    color: var(--font-color);
+    font-size: 48px;
+    font-weight: bold;
+  }
+  p{
+    color: var(--font-color);
+    font-size: 20px;
+  }
+  ion-card {
+    background: transparent;
+    box-shadow: none;
+    justify-content: center;
+    color: var(--font-color);
+    ion-img {
+      width: 90px;
+      height: 90px;
+      margin: auto;
+    }
+    h5 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    h4 {
+      font-size: 32px;
+      font-weight: bold;
+    }
+    p{
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .works_sec {
+    background-image: none;
+  }
+}

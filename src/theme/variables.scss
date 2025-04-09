@@ -1,2 +1,27 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+/* Set variables for all modes */
+:root {
+  --ion-background-color: #ab95f9;
+  --ion-font-family: "Nunito", -apple-system, BlinkMacSystemFont,
+    "Helvetica Neue", "Roboto", sans-serif;
+  --ion-text-color: #000000;
+  --ion-toolbar-color: #ffffff;
+
+  --main-color: #ab95f9;
+  --main-shade-color: #896AF9;
+  --main-tint-color: #f1edfe;
+  --white-color: #ffffff;
+  --font-color: #000000;
+  --custom-spacing: 1.5rem;
+  --box-main-shadow: 4px 4px 0px -1px #896af9;
+
+}
+
+/* Set text color of the entire app for iOS only */
+:root.ios {
+}
+
+/* Set text color of the entire app for Material Design only */
+:root.md {
+}

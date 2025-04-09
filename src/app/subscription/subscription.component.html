@@ -1,0 +1,212 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start">
+      <ion-img
+        src="assets/logo.svg"
+        alt="App logo"
+        [routerLink]="['/home']"
+        routerLinkActive="router-link-active"
+      ></ion-img>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <div class="subscription_sec sec_padding">
+      <ion-grid>
+        <ion-row class="">
+          <ion-col size="12" size-lg="10" offset-lg="1">
+            <ion-card>
+              <ion-row class="ion-justify-content-center">
+                <ion-col size="12" sizeMd="8" class="ion-padding">
+                  <ion-card-header class="ion-padding-bottom ion-margin-bottom">
+                    <h2>Subscribe</h2>
+                    <h4>to our Monthly Surprise Box</h4>
+                  </ion-card-header>
+                  <ion-card-content>
+                    <form [formGroup]="subscriptionForm">
+                      <h2>Contact Information</h2>
+                      <!-- name -->
+                      <div class="input_item">
+                        <ion-label position="stacked">Your Name</ion-label>
+                        <ion-input
+                          type="text"
+                          placeholder="e.g Osama Alshathri"
+                          fill="outline"
+                          formControlName="userName"
+                          errorText="required name"
+                        ></ion-input>
+                      </div>
+                      <!-- email -->
+                      <div class="input_item">
+                        <ion-label position="stacked">Email</ion-label>
+                        <ion-input
+                          type="email"
+                          placeholder="Osama@gmail.com"
+                          fill="outline"
+                          formControlName="email"
+                          errorText="required email"
+                        ></ion-input>
+                      </div>
+
+                      <h2>Child’s Information</h2>
+                      <!-- name -->
+                      <div class="input_item">
+                        <ion-label position="stacked"
+                          >Child’s Full Name</ion-label
+                        >
+                        <ion-input
+                          type="text"
+                          placeholder="e.g Sarah Mohammad"
+                          fill="outline"
+                          formControlName="childName"
+                          errorText="required childName"
+                        ></ion-input>
+                      </div>
+                      <!-- child date of birth -->
+                      <div class="input_item">
+                        <ion-label position="stacked"
+                          >Child’s Date of Birth</ion-label
+                        >
+                        <ion-datetime-button
+                          datetime="datetime"
+                        ></ion-datetime-button>
+
+                        <ion-modal [keepContentsMounted]="true">
+                          <ng-template>
+                            <ion-datetime
+                              id="datetime"
+                              presentation="date"
+                              value="2023-11-02"
+                              [preferWheel]="true"
+                              (ionChange)="changeDate($event)"
+                              [formatOptions]="{
+                              date: {
+                                weekday: 'short',
+                                month: 'long',
+                                day: '2-digit',
+                              }
+                            }"
+                            ></ion-datetime>
+                          </ng-template>
+                        </ion-modal>
+                      </div>
+                      <!-- child grade -->
+                      <div class="select_item">
+                        <ion-label position="stacked">Grade</ion-label>
+                        <ion-select
+                          formControlName="selectedGrade"
+                          fill="outline"
+                          interface="popover"
+                          label="e.g Grade 2"
+                          justify="space-between"
+                        >
+                          @for (grade of grades; track grade.id) {
+                          <ion-select-option [value]="grade.id">{{
+                            grade.name
+                          }}</ion-select-option>
+                          }
+                        </ion-select>
+                      </div>
+                      <div class="radio_item">
+                        <ion-radio-group (ionChange)="genderChange($event)">
+                          <ion-row>
+                            @for (gender of genders; track gender.id) {
+                            <ion-col>
+                              <!-- <div class="radio_item"> -->
+                              <ion-radio mode="ios" [value]="gender.id">{{
+                                gender.name
+                              }}</ion-radio>
+                              <!-- </div> -->
+                            </ion-col>
+                            }
+                          </ion-row>
+                        </ion-radio-group>
+                      </div>
+                      <h2>As a parent select any 3 topics</h2>
+                      <div class="topics">
+                        @for ( topic of topics; track topic.id) {
+                        <ion-chip
+                          [outline]="topic.selected"
+                          [disabled]="topic.disabled"
+                          (click)="updateSelection(topic.id, topic.selected)"
+                          >{{ topic.name }}</ion-chip
+                        >
+                        }
+                      </div>
+                      @if(errorText){
+                      <div class="error_text">{{ errorText }}</div>
+                      }
+
+                      <ion-button
+                        class="mt-70"
+                        expand="block"
+                        (click)="submitForm()"
+                      >
+                        Continue to Payment
+                      </ion-button>
+                    </form>
+                  </ion-card-content>
+                </ion-col>
+                <ion-col size="12" sizeMd="4" class="summary ion-padding pt-50">
+                  <p>Of your Monthly Surprise Box</p>
+                  <!-- Mystery Box  -->
+                  <div class="mystery_box">
+                    <div>
+                      <h2 class="title">Mystery Box</h2>
+                      <p class="quantity">X 1</p>
+                    </div>
+                    <div>
+                      <h2 class="price">SAR <strong>456</strong></h2>
+                      <p class="billing">Monthly</p>
+                    </div>
+                  </div>
+                  <!-- Subtotal -->
+                  <div class="mystery_box">
+                    <div>
+                      <h2 class="title">Subtotal</h2>
+                    </div>
+                    <div>
+                      <h2 class="price">SAR <strong>456</strong></h2>
+                    </div>
+                  </div>
+                  <!-- Shipping -->
+                  <div class="mystery_box">
+                    <div>
+                      <h2 class="title">Shipping</h2>
+                    </div>
+                    <div>
+                      <p class="price">Free</p>
+                    </div>
+                  </div>
+                  <!-- Taxes -->
+                  <div class="mystery_box">
+                    <div>
+                      <h2 class="title">Taxes</h2>
+                    </div>
+                    <div>
+                      <h2 class="price">SAR <strong>0</strong></h2>
+                    </div>
+                  </div>
+                  <!-- Total -->
+                  <div class="mystery_box">
+                    <div>
+                      <h2 class="title">Total</h2>
+                    </div>
+                    <div>
+                      <h2 class="price">SAR <strong>456</strong></h2>
+                      <p class="billing">Monthly</p>
+                    </div>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <!-- app footer -->
+    <app-footer />
+  </div>
+</ion-content>

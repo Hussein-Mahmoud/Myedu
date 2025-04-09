@@ -1,0 +1,35 @@
+<div class="works_sec sec_padding">
+  <ion-grid>
+    <ion-row class="ion-text-center ion-margin-bottom">
+      <ion-col size="12" size-md="8" size-lg="6" offset-md="2" offset-lg="3">
+        <h6>Discover</h6>
+        <h2 class="ion-margin-bottom">
+          How It Works: Subscribe and Receive Your Surprise Box
+        </h2>
+        <p class="ion-margin-bottom">
+          Subscribe to our surprise subscription box and give your child the
+          gift of learning. Each month, we curate a box filled with educational
+          materials tailored to your child's age and interests.
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center ion-padding">
+      @for ( step of steps ; track step.title ) {
+      <ion-col size="12" size-md="4">
+        <ion-card class="ion-text-center">
+          <ion-card-header>
+            <ion-img [src]="step.icon" alt="{{ step.title }}" />
+            <h5>{{ step.step }}:</h5>
+            <h4>{{ step.title }}</h4>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{ step.description }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      }
+      <ion-button class="ion-margin-bottom" [routerLink]="['/subscribe']" routerLinkActive="router-link-active" >Subscribe Now</ion-button>
+    </ion-row>
+  </ion-grid>
+</div>

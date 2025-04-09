@@ -34,4 +34,155 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+html {
+  font-size: 16px; /* Directly set 1rem = 16px */
+  color: var(--font-color);
+}
+
+ion-button {
+  --background: var(--white-color);
+  --color: var(--main-shade-color);
+  --box-shadow: var(--box-main-shadow);
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: var(--main-color);
+  --padding-bottom: 15px;
+  --padding-top: 15px;
+  --padding-start: 25px;
+  --padding-end: 25px;
+  --border-radius: 12px;
+  font-size: 22px;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+ion-header {
+  box-shadow: none !important;
+  border-width: 0px !important;
+}
+ion-toolbar {
+  --padding-start: 25px;
+  --padding-end: 25px;
+  --min-height: 72px;
+  --box-shadow: none !important;
+  --border-width: 0px !important;
+}
+
+.sec_padding {
+  padding-top: 112px;
+  padding-bottom: 112px;
+}
+
+ion-datetime-button::part(native) {
+  border: 1px solid #d0d5dd !important;
+  background: var(--white-color);
+  min-height: 44px !important;
+  border-radius: 8px;
+  width: 100%;
+  .ion-activatable {
+    background: var(--white-color);
+    border: 1px solid #d0d5dd !important;
+    min-height: 44px !important;
+    border-radius: 8px;
+  }
+}
+
+.input_item {
+  margin-bottom: 15px;
+  ion-label {
+    margin-bottom: 5px !important;
+  }
+  ion-input {
+    --border-width: 0 !important;
+    border: 1px solid #d0d5dd !important;
+    min-height: 44px !important;
+    border-radius: 8px;
+  }
+}
+.radio_item {
+  ion-radio {
+    border: 1px solid #d0d5dd !important;
+    min-height: 44px !important;
+    border-radius: 8px;
+    padding-inline-end: 15px;
+    padding-inline-start: 15px;
+    width: 100%;
+  }
+}
+
+.select_item {
+  margin-bottom: 15px;
+  ion-label {
+    margin-bottom: 5px !important;
+  }
+  ion-select {
+    --border-color: #d0d5dd;
+    --background: var(--white-color);
+    min-height: 44px !important;
+    border-radius: 8px;
+    --padding-start: 15px;
+    --padding-end: 15px;
+    width: 100%;
+    --width: 100%;
+  }
+}
+ion-item {
+  --background: var(--white-color);
+}
+
+
+// ====================margin==================//
+// margin top class from 0 to 100
+@for $i from 0 through 100 {
+  .mt-#{$i} {
+    margin-top: #{$i}px;
+  }
+}
+
+
+// margin bottom class from 0 to 100
+@for $i from 0 through 100 {
+  .mb-#{$i} {
+    margin-bottom: #{$i}px;
+  }
+}
+// margin inline-start class from 0 to 100
+@for $i from 0 through 100 {
+  .ms-#{$i} {
+    margin-inline-start: #{$i}px;
+  }
+}
+// margin inline-end class from 0 to 100
+@for $i from 0 through 100 {
+  .me-#{$i} {
+    margin-inline-end: #{$i}px;
+  }
+}
+
+// ====================padding==================//
+
+// padding top class from 0 to 100
+@for $i from 0 through 100 {
+  .pt-#{$i} {
+    padding-top: #{$i}px;
+  }
+}
+// margin bottom class from 0 to 100
+@for $i from 0 through 100 {
+  .pb-#{$i} {
+    padding-bottom: #{$i}px;
+  }
+}
+// margin inline-start class from 0 to 100
+@for $i from 0 through 100 {
+  .ps-#{$i} {
+    padding-inline-start: #{$i}px;
+  }
+}
+// margin inline-end class from 0 to 100
+@for $i from 0 through 100 {
+  .pe-#{$i} {
+    padding-inline-end: #{$i}px;
+  }
+}
